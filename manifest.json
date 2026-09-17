@@ -1,0 +1,14 @@
+﻿{
+  "manifest_version": 3,
+  "name": "Prompt Monocle",
+  "version": "1.0.0",
+  "description": "Zero-telemetry local prompt anchor HUD and context drift chronometer.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Prompt Monocle"
+  },
+  "permissions": [
+    "storage",
+    "clipboardWrite"
+  ]
+}

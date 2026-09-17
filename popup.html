@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prompt Monocle</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="hud-header">
+    <div class="title">PROMPT MONOCLE <span class="tag">v1.0.0</span></div>
+    <div class="status-indicator"></div>
+  </div>
+
+  <div class="section-meter">
+    <div class="meter-labels">
+      <span>DRIFT CHRONOMETER</span>
+      <span id="turnCounter">Turn: 0 / 12</span>
+    </div>
+    <div class="progress-track">
+      <div id="progressBar" class="progress-bar" style="width: 0%;"></div>
+    </div>
+    <div class="btn-row">
+      <button id="btnIncrement" class="hud-btn small">+ Next Turn</button>
+      <button id="btnReset" class="hud-btn small text-dim">Reset</button>
+    </div>
+  </div>
+
+  <div class="section-anchors">
+    <div class="field-label">ACTIVE SYSTEM ANCHORS</div>
+    <textarea id="anchorInput" placeholder="Enter persistent rules, negative constraints, or persona bounds..."></textarea>
+  </div>
+
+  <div class="action-footer">
+    <button id="btnStamp" class="hud-btn primary">Copy Reinforcement Stamp</button>
+    <div id="statusToast" class="toast">Reinforcement block copied to clipboard.</div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
