@@ -9,7 +9,6 @@
 
   const MAX_SAFE_TURNS = 12;
 
-  // Restore saved state
   chrome.storage.local.get(['turns', 'anchors'], (result) => {
     const turns = result.turns || 0;
     const anchors = result.anchors || '';
@@ -17,12 +16,10 @@
     updateHUD(turns);
   });
 
-  // Save anchors automatically on input
   anchorInput.addEventListener('input', () => {
     chrome.storage.local.set({ anchors: anchorInput.value });
   });
 
-  // Turn tracking
   btnIncrement.addEventListener('click', () => {
     chrome.storage.local.get(['turns'], (result) => {
       const current = (result.turns || 0) + 1;
@@ -36,7 +33,6 @@
     updateHUD(0);
   });
 
-  // Reusable stamp action
   function executeStamp() {
     chrome.storage.local.get(['turns', 'anchors'], (result) => {
       const turns = result.turns || 0;
@@ -59,7 +55,6 @@ ${anchors}
 
   btnStamp.addEventListener('click', executeStamp);
 
-  // Ergonomic hotkey: Ctrl + Enter to stamp directly
   anchorInput.addEventListener('keydown', (e) => {
     if (e.ctrlKey && e.key === 'Enter') {
       e.preventDefault();
