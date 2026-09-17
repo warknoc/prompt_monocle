@@ -25,6 +25,14 @@ Prompt Monocle acts as an intentional, air-gapped HUD to track thread depth and 
 
 ---
 
+## Support
+
+If Pixel Purge saved the day, you can support development directly:
+
+- **USDC (Ethereum / Base):** 0x9805F8fd4A23Dd39cce11c03C10e6f966B1D6755
+
+---
+
 ## License
 
 MIT License. Free for commercial and private use.
