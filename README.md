@@ -6,7 +6,7 @@ Zero-telemetry, offline Chrome extension for prompt engineering, constraint rein
 
 ## Why Prompt Monocle?
 
-Long conversational threads suffer from instruction decay—where models lose formatting rules, persona constraints, or negative guardrails over successive turns.
+Long conversational threads suffer from instruction decay-where models lose formatting rules, persona constraints, or negative guardrails over successive turns.
 
 Prompt Monocle acts as an intentional, air-gapped HUD to track thread depth and stamp persistent system anchors back into your prompt clipboard with one click.
 
