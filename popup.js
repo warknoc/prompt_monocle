@@ -36,8 +36,8 @@
     updateHUD(0);
   });
 
-  // Stamp assembly & clipboard action
-  btnStamp.addEventListener('click', () => {
+  // Reusable stamp action
+  function executeStamp() {
     chrome.storage.local.get(['turns', 'anchors'], (result) => {
       const turns = result.turns || 0;
       const anchors = result.anchors || 'None defined.';
@@ -55,6 +55,16 @@ ${anchors}
         }, 2000);
       });
     });
+  }
+
+  btnStamp.addEventListener('click', executeStamp);
+
+  // Ergonomic hotkey: Ctrl + Enter to stamp directly
+  anchorInput.addEventListener('keydown', (e) => {
+    if (e.ctrlKey && e.key === 'Enter') {
+      e.preventDefault();
+      executeStamp();
+    }
   });
 
   function updateHUD(count) {
@@ -63,11 +73,11 @@ ${anchors}
     progressBar.style.width = pct + '%';
 
     if (count < 6) {
-      progressBar.style.backgroundColor = '#38bdf8'; // Cyan
+      progressBar.style.backgroundColor = '#38bdf8';
     } else if (count < 10) {
-      progressBar.style.backgroundColor = '#d29922'; // Caution Amber
+      progressBar.style.backgroundColor = '#d29922';
     } else {
-      progressBar.style.backgroundColor = '#f85149'; // Drift Warning Red
+      progressBar.style.backgroundColor = '#f85149';
     }
   }
 });
